@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import img from "../assets/nazu.png"
 
 const Hero = () => {
   const statusPills = [
@@ -11,7 +12,7 @@ const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center px-6 md:px-12 pt-[120px] pb-20 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,19 +21,19 @@ const Hero = () => {
           <div className="font-mono text-[12px] text-lime tracking-[0.2em] uppercase mb-5 flex items-center gap-2.5 before:content-[''] before:w-10 before:h-[1px] before:bg-lime before:shadow-[0_0_8px_#a8ff3e]">
             Available for opportunities
           </div>
-          
+
           <h1 className="font-orbitron text-[42px] md:text-[6vw] lg:text-[80px] font-black leading-[1.1] tracking-tighter mb-4">
             <span className="text-[#e2eaf5] block">Full-Stack</span>
             <span className="block bg-gradient-to-r from-cyan to-lime bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,240,255,0.3)]">
               Developer
             </span>
           </h1>
-          
+
           <p className="text-muted text-base md:text-lg mb-8 leading-relaxed max-w-[440px]">
-            Building <strong className="text-cyan font-semibold">scalable web systems</strong> with React, Next.js & Node.js — 
+            Building <strong className="text-cyan font-semibold">scalable web systems</strong> with React, Next.js & Node.js —
             on a focused path toward <strong className="text-cyan font-semibold">AI engineering</strong> and Python mastery.
           </p>
-          
+
           <div className="flex gap-4">
             <a href="#projects" className="btn-primary clickable">
               <span>↗</span> View Projects
@@ -68,9 +69,9 @@ const Hero = () => {
 
             {/* Avatar Image */}
             <div className="absolute inset-[30px] bg-gradient-to-br from-[#0a1628] to-[#061020] rounded-full border border-cyan/12 overflow-hidden flex items-center justify-center">
-              <img 
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=400&h=400" 
-                alt="Avatar" 
+              <img
+                src={img}
+                alt="Avatar"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -81,7 +82,7 @@ const Hero = () => {
                 key={idx}
                 className={`absolute bg-dark/90 border border-cyan/12 backdrop-blur-md px-3.5 py-2 rounded-md font-mono text-[11px] whitespace-nowrap flex items-center gap-2 ${pill.className}`}
               >
-                <div 
+                <div
                   className="w-1.5 h-1.5 rounded-full animate-pulse"
                   style={{ backgroundColor: pill.color, boxShadow: `0 0 6px ${pill.color}` }}
                 />
