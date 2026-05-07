@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiX, FiSend, FiCheckCircle } from 'react-icons/fi';
+
 
 const ContactPopup = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -45,7 +47,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
               onClick={handleClose}
               className="absolute top-5 right-5 text-muted hover:text-cyan transition-colors text-xl clickable"
             >
-              ✕
+              <FiX />
             </button>
 
             {!isSuccess ? (
@@ -90,12 +92,12 @@ const ContactPopup = ({ isOpen, onClose }) => {
                   type="submit"
                   className="w-full bg-cyan text-dark font-mono text-[13px] font-bold py-3.5 flex items-center justify-center gap-2 hover:bg-lime transition-colors clickable group"
                 >
-                  Send Message <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  Send Message <FiSend className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
             ) : (
               <div className="text-center py-8">
-                <div className="text-5xl mb-4">✉️</div>
+                <div className="text-5xl mb-4 text-lime flex justify-center"><FiCheckCircle /></div>
                 <h3 className="font-orbitron text-xl font-bold text-[#e2eaf5] mb-2">Message sent!</h3>
                 <p className="text-muted text-sm">Thanks for reaching out. I'll get back to you soon.</p>
                 <button 

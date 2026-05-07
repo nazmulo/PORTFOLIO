@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiMail, FiGithub, FiLinkedin, FiFileText } from 'react-icons/fi';
 
 const Contact = () => {
   const links = [
-    { name: '✉ Email Me', href: 'mailto:itsnaazmul@gmail.com' },
-    { name: '⌥ GitHub', href: 'https://github.com/nazmulo' },
-    { name: 'in LinkedIn', href: 'https://www.linkedin.com/in/itsnaazmul' },
-    { name: '↓ Resume', href: '#' },
+    { name: 'Email Me', href: 'mailto:itsnaazmul@gmail.com', icon: <FiMail /> },
+    { name: 'GitHub', href: 'https://github.com/nazmulo', icon: <FiGithub /> },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/itsnaazmul', icon: <FiLinkedin /> },
+    { name: 'Resume', href: '#', icon: <FiFileText /> },
   ];
+
 
   return (
     <section id="contact" className="py-[100px] px-6 md:px-12">
@@ -40,6 +42,7 @@ const Contact = () => {
                 className="flex items-center gap-2.5 px-5.5 py-3 border border-cyan/12 text-[#e2eaf5] font-mono text-[12px] tracking-wider transition-all hover:border-cyan hover:text-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.15)] hover:-translate-y-0.5 clickable"
                 style={{ clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)' }}
               >
+                <span className="text-sm">{link.icon}</span>
                 {link.name}
               </a>
             ))}

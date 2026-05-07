@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiArrowUpRight, FiSend } from 'react-icons/fi';
 import img from "../assets/nazu.png"
+
 
 const Hero = () => {
   const statusPills = [
@@ -36,10 +38,10 @@ const Hero = () => {
 
           <div className="flex gap-4">
             <a href="#projects" className="btn-primary clickable">
-              <span>↗</span> View Projects
+              <FiArrowUpRight className="text-lg" /> View Projects
             </a>
             <a href="#contact" className="btn-ghost clickable">
-              <span>✉</span> Contact Me
+              <FiSend className="text-lg" /> Contact Me
             </a>
           </div>
         </motion.div>

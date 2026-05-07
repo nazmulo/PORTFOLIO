@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiExternalLink, FiGithub, FiCpu, FiLayers } from 'react-icons/fi';
+
 
 const ProjectCard = ({ num, title, desc, stack, links, bannerStyle, isComingSoon }) => (
   <motion.div
@@ -10,8 +12,8 @@ const ProjectCard = ({ num, title, desc, stack, links, bannerStyle, isComingSoon
   >
     <div className={`h-[180px] relative overflow-hidden flex items-center justify-center`} style={bannerStyle}>
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(0,240,255,0.15)_1px,transparent_1px)] bg-[size:30px_30px]" />
-      <div className="text-[56px] relative z-[2] drop-shadow-[0_0_20px_rgba(0,240,255,0.5)]">
-        {isComingSoon ? '🤖' : '🚀'}
+      <div className="text-[56px] relative z-[2] drop-shadow-[0_0_20px_rgba(0,240,255,0.5)] text-cyan">
+        {isComingSoon ? <FiCpu /> : <FiLayers />}
       </div>
     </div>
     
@@ -38,11 +40,15 @@ const ProjectCard = ({ num, title, desc, stack, links, bannerStyle, isComingSoon
       </div>
       
       {isComingSoon ? (
-        <div className="font-mono text-[11px] text-[#ffd24d] opacity-60">⏳ In Progress...</div>
+        <div className="font-mono text-[11px] text-[#ffd24d] opacity-60 flex items-center gap-1.5">⏳ In Progress...</div>
       ) : (
-        <div className="flex gap-3">
-          <a href="#" className="font-mono text-[11px] text-cyan flex items-center gap-1 tracking-wider border-b border-transparent transition-colors hover:border-cyan">↗ Live Demo</a>
-          <a href="#" className="font-mono text-[11px] text-cyan flex items-center gap-1 tracking-wider border-b border-transparent transition-colors hover:border-cyan">⌥ GitHub</a>
+        <div className="flex gap-4">
+          <a href="#" className="font-mono text-[11px] text-cyan flex items-center gap-1.5 tracking-wider border-b border-transparent transition-all hover:border-cyan hover:gap-2">
+            <FiExternalLink /> Live Demo
+          </a>
+          <a href="#" className="font-mono text-[11px] text-cyan flex items-center gap-1.5 tracking-wider border-b border-transparent transition-all hover:border-cyan hover:gap-2">
+            <FiGithub /> GitHub
+          </a>
         </div>
       )}
     </div>

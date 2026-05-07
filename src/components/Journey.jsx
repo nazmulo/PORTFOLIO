@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiCheck, FiPlay, FiArrowRight } from 'react-icons/fi';
 
-const TimelineItem = ({ period, title, body, status, statusClass, dotClass }) => (
+const TimelineItem = ({ period, title, body, status, statusClass, dotClass, icon }) => (
   <motion.div
     whileInView={{ opacity: 1, x: 0 }}
     initial={{ opacity: 0, x: -20 }}
@@ -17,7 +18,7 @@ const TimelineItem = ({ period, title, body, status, statusClass, dotClass }) =>
     <p className="text-[14px] text-muted leading-relaxed max-w-[600px] mb-2.5">{body}</p>
     
     <span className={`inline-flex items-center gap-1.5 font-mono text-[11px] px-3 py-1 rounded-full border ${statusClass}`}>
-      {status}
+      {icon} {status}
     </span>
   </motion.div>
 );
@@ -28,7 +29,8 @@ const Journey = () => {
       period: 'Foundation',
       title: 'Frontend Developer',
       body: 'Mastered React ecosystem, Next.js for SSR/SSG, and modern JavaScript. Built responsive UIs, integrated APIs, and deployed production apps.',
-      status: '✓ Completed',
+      status: 'Completed',
+      icon: <FiCheck />,
       statusClass: 'bg-cyan/10 text-cyan border-cyan/30',
       dotClass: '',
     },
@@ -36,7 +38,8 @@ const Journey = () => {
       period: 'Now — Present',
       title: 'Full-Stack Development',
       body: 'Deepening backend with Node.js, Express, MongoDB. Exploring PostgreSQL, Docker, and system design to become a complete full-stack engineer.',
-      status: '▸ Active',
+      status: 'Active',
+      icon: <FiPlay className="text-[9px]" />,
       statusClass: 'bg-lime/10 text-lime border-lime/30',
       dotClass: 'border-[#a8ff3e]',
     },
@@ -44,7 +47,8 @@ const Journey = () => {
       period: 'Next — 2025/26',
       title: 'Python & Machine Learning',
       body: 'Learning Python, NumPy, Pandas, scikit-learn. Building ML models and starting with neural networks via PyTorch. Bridging web dev and data science.',
-      status: '→ Upcoming',
+      status: 'Upcoming',
+      icon: <FiArrowRight />,
       statusClass: 'bg-[#ff2d7a]/10 text-[#ff2d7a] border-[#ff2d7a]/30',
       dotClass: 'border-muted',
     },
@@ -52,11 +56,13 @@ const Journey = () => {
       period: 'Future Goal',
       title: 'AI Engineer & Expert',
       body: 'Building with LLMs, RAG pipelines, LangChain, vector databases. Creating AI-powered full-stack products that merge deep ML knowledge with elite web engineering.',
-      status: '→ Vision',
+      status: 'Vision',
+      icon: <FiArrowRight />,
       statusClass: 'bg-[#ff2d7a]/10 text-[#ff2d7a] border-[#ff2d7a]/30',
       dotClass: 'border-muted',
     },
   ];
+
 
   return (
     <section id="learning" className="py-[100px] px-6 md:px-12">

@@ -19,7 +19,7 @@ const Navbar = ({ onHireClick }) => {
           <a
             key={link.name}
             href={link.href}
-            className="text-muted text-[13px] font-semibold tracking-widest uppercase transition-colors hover:text-cyan font-mono clickable"
+            className="text-[#e2eaf5] text-[13px] font-semibold tracking-widest uppercase transition-colors hover:text-cyan font-mono clickable"
           >
             {link.name}
           </a>

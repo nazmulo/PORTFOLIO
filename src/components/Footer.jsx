@@ -1,4 +1,6 @@
 import React from 'react';
+import { FiArrowRight } from 'react-icons/fi';
+
 
 const Footer = () => {
   return (
@@ -12,8 +14,8 @@ const Footer = () => {
         Open to opportunities
       </div>
       
-      <span className="font-mono text-[11px] text-muted">
-        React · Node.js · AI →
+      <span className="font-mono text-[11px] text-muted flex items-center gap-2">
+        React · Node.js · AI <FiArrowRight className="text-lime" />
       </span>
     </footer>
   );
