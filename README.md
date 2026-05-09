@@ -1,16 +1,34 @@
-# React + Vite
+# Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and interactive developer portfolio built with React, Vite, Tailwind CSS, and Framer Motion. This portfolio features a cyberpunk aesthetic with dynamic glassmorphism effects, smooth animations, and a fully functional contact form powered by EmailJS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Modern Tech Stack**: Built with React and Vite for lightning-fast performance and development.
+- **Cyberpunk UI**: A visually stunning theme featuring vibrant neon colors, dark modes, and modern typography.
+- **Glassmorphism Design**: Sleek and premium glass effects used across project cards and UI components.
+- **Smooth Animations**: Integrated `framer-motion` for engaging micro-interactions and page transitions.
+- **Responsive Layout**: Fully optimized for mobile, tablet, and desktop devices using Tailwind CSS.
+- **Live Contact Form**: Seamlessly send messages directly from the website using the EmailJS integration.
+- **Optimized Icons**: Utilizes `react-icons` and `lucide-react` for crisp and scalable iconography.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 8](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/) & [Lucide React](https://lucide.dev/)
+- **Email Service**: [EmailJS](https://www.emailjs.com/)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Contact Form Setup (EmailJS)
+
+To get the contact form working, you need to set up an account with EmailJS:
+
+1. Create an account at [EmailJS](https://www.emailjs.com/).
+2. Create an Email Service and an Email Template.
+3. Replace the `Service ID`, `Template ID`, and `Public Key` in your `Contact` component with your own credentials.
+
+## LIVE LINK : https://nazmul-web.netlify.app/

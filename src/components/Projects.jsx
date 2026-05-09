@@ -103,7 +103,7 @@ const Projects = () => {
       num: '02',
       title: 'GitHub Issues Tracker',
       desc: 'A comprehensive ecosystem solution for tracking issues, managing workflows, and streamlining collaborative development projects.',
-      stack: ['React', 'Node.js', 'Express', 'GitHub API'],
+      stack: ['React', 'API', 'Tailwind CSS'],
       image: githubIssuesImg,
       links: {
         live: 'https://sun-cart-beta.vercel.app/',
@@ -115,7 +115,7 @@ const Projects = () => {
       num: '03',
       title: 'Project Keen Keeper',
       desc: 'An advanced friendship analytics and journaling platform designed to help users maintain and cherish meaningful connections.',
-      stack: ['React', 'Framer Motion', 'Chart.js', 'Firebase'],
+      stack: ['React', 'API', 'Tailwind CSS'],
       image: keenKeeperImg,
       links: {
         live: 'https://keen-keeper-1.netlify.app/',
@@ -127,7 +127,7 @@ const Projects = () => {
       num: '04',
       title: 'Workflow Digitools',
       desc: 'A complete ecosystem web design focused on supercharging digital workflows with modern tools and AI-driven automation.',
-      stack: ['react', 'FastAPI', 'Next.js', 'OpenAI'],
+      stack: ['React', 'API', 'Tailwind CSS'],
       image: workflowBoostImg,
       links: {
         live: 'https://digitools-plat.netlify.app/',
