@@ -39,6 +39,8 @@ const Contact = () => {
               <a
                 key={link.name}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2.5 px-5.5 py-3 border border-cyan/12 text-[#e2eaf5] font-mono text-[12px] tracking-wider transition-all hover:border-cyan hover:text-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.15)] hover:-translate-y-0.5 clickable"
                 style={{ clipPath: 'polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)' }}
               >
