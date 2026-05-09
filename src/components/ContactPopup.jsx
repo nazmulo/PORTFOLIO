@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiSend, FiCheckCircle, FiLoader } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
@@ -65,7 +65,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative bg-dark border border-cyan/12 rounded-[20px] p-8 md:p-10 w-full max-w-[420px] shadow-[0_24px_80px_rgba(0,0,0,0.5)] overflow-hidden"
+            className="relative bg-dark/60 backdrop-blur-xl border border-cyan/12 rounded-[20px] p-8 md:p-10 w-full max-w-[420px] shadow-[0_24px_80px_rgba(0,0,0,0.5)] overflow-hidden"
           >
             <button
               onClick={handleClose}
@@ -76,7 +76,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
 
             {!isSuccess ? (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <h2 className="font-orbitron text-2xl font-bold text-[#e2eaf5]">Send Me a Message</h2>
+                <h2 className="font-orbitron text-2xl font-bold text-[var(--text)]">Send Me a Message</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
@@ -86,7 +86,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                       placeholder="Name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-[#060d18] border border-cyan/12 rounded-md px-4 py-2.5 text-sm text-[#e2eaf5] focus:outline-none focus:border-cyan/40 transition-colors"
+                      className="w-full bg-[var(--card-bg)] border border-cyan/12 rounded-md px-4 py-2.5 text-sm text-[var(--text)] focus:outline-none focus:border-cyan/40 transition-colors"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -96,7 +96,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                       placeholder="Email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-[#060d18] border border-cyan/12 rounded-md px-4 py-2.5 text-sm text-[#e2eaf5] focus:outline-none focus:border-cyan/40 transition-colors"
+                      className="w-full bg-[var(--card-bg)] border border-cyan/12 rounded-md px-4 py-2.5 text-sm text-[var(--text)] focus:outline-none focus:border-cyan/40 transition-colors"
                     />
                   </div>
                 </div>
@@ -108,7 +108,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                     placeholder="Tell me about your project or just say hi..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-[#060d18] border border-cyan/12 rounded-md px-4 py-2.5 text-sm text-[#e2eaf5] focus:outline-none focus:border-cyan/40 transition-colors resize-none"
+                    className="w-full bg-[var(--card-bg)] border border-cyan/12 rounded-md px-4 py-2.5 text-sm text-[var(--text)] focus:outline-none focus:border-cyan/40 transition-colors resize-none"
                   />
                 </div>
 
@@ -127,7 +127,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
             ) : (
               <div className="text-center py-8">
                 <div className="text-5xl mb-4 text-lime flex justify-center"><FiCheckCircle /></div>
-                <h3 className="font-orbitron text-xl font-bold text-[#e2eaf5] mb-2">Message sent!</h3>
+                <h3 className="font-orbitron text-xl font-bold text-[var(--text)] mb-2">Message sent!</h3>
                 <p className="text-muted text-sm">Thanks for reaching out. I'll get back to you soon.</p>
                 <button
                   onClick={handleClose}

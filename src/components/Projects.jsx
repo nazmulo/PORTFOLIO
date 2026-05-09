@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub, FiCpu, FiLayers } from 'react-icons/fi';
 
@@ -14,7 +14,7 @@ const ProjectCard = ({ num, title, desc, stack, links, bannerStyle, isComingSoon
     whileInView={{ opacity: 1, y: 0 }}
     initial={{ opacity: 0, y: 30 }}
     viewport={{ once: true }}
-    className={`bg-[#060d18] border border-cyan/12 relative overflow-hidden transition-all duration-500 hover:border-cyan/40 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_30px_rgba(0,240,255,0.1)] group clickable ${isComingSoon ? 'border-dashed border-[#ffd24d]/20' : ''}`}
+    className={`bg-[var(--card-bg)]/40 backdrop-blur-md border border-[var(--border-color)] relative overflow-hidden transition-all duration-500 hover:border-cyan/40 hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(0,0,0,0.1),0_0_30px_rgba(0,240,255,0.05)] group clickable ${isComingSoon ? 'border-dashed border-[#ffd24d]/20' : ''}`}
   >
     <div className={`h-[180px] relative overflow-hidden flex items-center justify-center`} style={bannerStyle}>
       {image ? (
@@ -24,7 +24,7 @@ const ProjectCard = ({ num, title, desc, stack, links, bannerStyle, isComingSoon
             alt={title}
             className="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-all duration-700 scale-105 group-hover:scale-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#060d18] via-transparent to-transparent opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--card-bg)] via-transparent to-transparent opacity-60" />
           <div className="absolute inset-0 bg-cyan/5 group-hover:bg-transparent transition-colors duration-500" />
         </>
       ) : (
@@ -41,7 +41,7 @@ const ProjectCard = ({ num, title, desc, stack, links, bannerStyle, isComingSoon
       <div className={`font-mono text-[10px] tracking-[0.2em] mb-2 ${isComingSoon ? 'text-[#ffd24d]' : 'text-muted'}`}>
         {isComingSoon ? 'COMING SOON' : 'PROJECT'} / {num}
       </div>
-      <h3 className={`font-orbitron text-lg font-bold mb-2.5 ${isComingSoon ? 'text-[#ffd24d]' : 'text-[#e2eaf5]'}`}>
+      <h3 className={`font-orbitron text-lg font-bold mb-2.5 ${isComingSoon ? 'text-[#ffd24d]' : 'text-[var(--text)]'}`}>
         {title}
       </h3>
       <p className="text-[13px] text-muted leading-relaxed mb-[18px]">

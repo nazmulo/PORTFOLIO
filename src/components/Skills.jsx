@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { 
   SiReact, SiNextdotjs, SiJavascript, SiTailwindcss,
@@ -16,7 +16,7 @@ const SkillCard = ({ title, tags, colorClass }) => (
     whileInView={{ opacity: 1, y: 0 }}
     initial={{ opacity: 0, y: 30 }}
     viewport={{ once: true }}
-    className="bg-[#060d18] border border-cyan/12 p-7 relative overflow-hidden transition-all hover:border-cyan/35 hover:-translate-y-1 group clickable"
+    className="bg-[var(--card-bg)]/40 backdrop-blur-md border border-[var(--border-color)] p-7 relative overflow-hidden transition-all hover:border-cyan/35 hover:-translate-y-1 group clickable"
     style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))' }}
   >
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,240,255,0.06),transparent_60%)] opacity-0 transition-opacity group-hover:opacity-100" />
@@ -85,7 +85,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-[100px] px-6 md:px-12 bg-[#020810]">
+    <section id="skills" className="py-[100px] px-6 md:px-12">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-16">
           <div className="section-tag mb-4">Technical Expertise</div>

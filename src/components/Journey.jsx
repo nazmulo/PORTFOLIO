@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { FiCheck, FiPlay, FiArrowRight } from 'react-icons/fi';
 
@@ -9,17 +9,19 @@ const TimelineItem = ({ period, title, body, status, statusClass, dotClass, icon
     viewport={{ once: true }}
     className="relative pl-12 mb-12"
   >
-    <div className={`absolute left-[-11px] top-1 w-[22px] h-[22px] rounded-full border-2 border-cyan bg-dark flex items-center justify-center z-10 ${dotClass}`}>
+    <div className={`absolute left-[-11px] top-1 w-[22px] h-[22px] rounded-full border-2 border-cyan bg-[var(--bg)] flex items-center justify-center z-10 ${dotClass}`}>
       <div className={`w-2 h-2 rounded-full bg-cyan shadow-[0_0_10px_#00f0ff] ${dotClass === 'border-[#a8ff3e]' ? 'bg-lime shadow-[0_0_10px_#a8ff3e]' : ''}`} />
     </div>
     
-    <div className="font-mono text-[10px] text-muted tracking-[0.15em] uppercase mb-1.5">{period}</div>
-    <h3 className="font-orbitron text-[18px] font-bold text-[#e2eaf5] mb-2">{title}</h3>
-    <p className="text-[14px] text-muted leading-relaxed max-w-[600px] mb-2.5">{body}</p>
-    
-    <span className={`inline-flex items-center gap-1.5 font-mono text-[11px] px-3 py-1 rounded-full border ${statusClass}`}>
-      {icon} {status}
-    </span>
+    <div className="bg-[var(--card-bg)]/20 backdrop-blur-md border border-[var(--border-color)] p-6 rounded-lg relative transition-all hover:bg-cyan/[0.03] group">
+      <div className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.15em] uppercase mb-1.5">{period}</div>
+      <h3 className="font-orbitron text-[18px] font-bold text-[var(--text)] mb-2">{title}</h3>
+      <p className="text-[14px] text-[var(--text-muted)] leading-relaxed max-w-[600px] mb-4">{body}</p>
+      
+      <span className={`inline-flex items-center gap-1.5 font-mono text-[11px] px-3 py-1 rounded-full border ${statusClass}`}>
+        {icon} {status}
+      </span>
+    </div>
   </motion.div>
 );
 

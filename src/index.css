@@ -2,34 +2,55 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cyan: #00f0ff;
-  --color-lime: #a8ff3e;
-  --color-dark: #020408;
-  --color-muted: #4a6080;
+  --color-cyan: var(--cyan);
+  --color-lime: var(--lime);
+  --color-dark: var(--bg);
+  --color-muted: var(--text-muted);
   
   --font-orbitron: "Orbitron", sans-serif;
   --font-syne: "Syne", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
+:root {
+  --cyan: #00f0ff;
+  --lime: #a8ff3e;
+  --bg: #020408;
+  --card-bg: #060d18;
+  --text: #e2eaf5;
+  --text-muted: #4a6080;
+  --border-color: rgba(0, 240, 255, 0.12);
+}
+
+:root.light {
+  --cyan: #0891b2;
+  --lime: #4d7c0f;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border-color: rgba(15, 23, 42, 0.1);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   body {
-    @apply bg-dark text-[#e2eaf5] font-syne overflow-x-hidden;
+    @apply bg-dark text-[var(--text)] font-syne overflow-x-hidden;
     cursor: none;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-gradient-to-br from-cyan to-blue-600 text-dark px-7 py-3.5 font-mono text-[13px] font-medium tracking-wider uppercase transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(0,240,255,0.4)];
+    @apply inline-flex items-center gap-2 bg-gradient-to-br from-cyan to-blue-600 text-[var(--bg)] px-7 py-3.5 font-mono text-[13px] font-medium tracking-wider uppercase transition-all hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(0,240,255,0.4)];
     clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
   }
   
   .btn-ghost {
-    @apply inline-flex items-center gap-2 bg-transparent text-[#e2eaf5] px-7 py-3.5 font-mono text-[13px] tracking-wider uppercase border border-cyan/10 transition-all hover:border-cyan hover:text-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.15)];
+    @apply inline-flex items-center gap-2 bg-transparent text-[var(--text)] px-7 py-3.5 font-mono text-[13px] tracking-wider uppercase border border-[var(--border-color)] transition-all hover:border-cyan hover:text-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.15)];
     clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
   }
 
@@ -46,11 +67,14 @@
   }
 }
 
-/* Custom Scanline Effect */
+/* Custom Scanline Effect - Hide in Light Mode for cleaner look */
 .scanline {
   @apply fixed -top-full left-0 right-0 h-[40%] pointer-events-none z-[3];
   background: linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.01), transparent);
   animation: scanMove 8s linear infinite;
+}
+.light .scanline {
+  display: none;
 }
 
 @keyframes scanMove {
@@ -62,4 +86,7 @@
 .noise-overlay {
   @apply fixed inset-0 pointer-events-none z-[1] opacity-[0.03];
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' /%3E%3C/svg%3E");
+}
+.light .noise-overlay {
+  opacity: 0.01;
 }

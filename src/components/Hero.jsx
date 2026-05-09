@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { FiArrowUpRight, FiSend } from 'react-icons/fi';
 import img from "../assets/nazu.png"
@@ -25,7 +25,7 @@ const Hero = () => {
           </div>
 
           <h1 className="font-orbitron text-[42px] md:text-[6vw] lg:text-[80px] font-black leading-[1.1] tracking-tighter mb-4">
-            <span className="text-[#e2eaf5] block">Full-Stack</span>
+            <span className="text-[var(--text)] block">Full-Stack</span>
             <span className="block bg-gradient-to-r from-cyan to-lime bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,240,255,0.3)]">
               Developer
             </span>

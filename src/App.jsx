@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -13,6 +13,22 @@ import ContactPopup from './components/ContactPopup';
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme === 'dark' : true;
+  });
+
+  useEffect(() => {
+    if (!isDarkMode) {
+      document.documentElement.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
     <div className="relative min-h-screen">
@@ -21,7 +37,11 @@ function App() {
       <div className="noise-overlay" />
       <BackgroundCanvas />
       
-      <Navbar onHireClick={() => setIsPopupOpen(true)} />
+      <Navbar 
+        onHireClick={() => setIsPopupOpen(true)} 
+        isDarkMode={isDarkMode}
+        toggleTheme={toggleTheme}
+      />
       
       <main>
         <Hero />
